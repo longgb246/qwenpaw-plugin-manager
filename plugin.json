@@ -1,0 +1,21 @@
+{
+  "id": "plugin-manager",
+  "name": "插件管理器",
+  "version": "1.0.0",
+  "description": "QwenPaw/CoPaw 插件管理器 - 可视化安装、卸载、启用、禁用插件",
+  "author": "longgb246",
+  "license": "MIT",
+  "repository": "https://github.com/longgb246/qwenpaw-plugin-manager",
+  "homepage": "https://github.com/longgb246/qwenpaw-plugin-manager",
+  "entry": {
+    "backend": "plugin.py",
+    "frontend": "frontend.js"
+  },
+  "dependencies": [],
+  "min_version": "1.1.0",
+  "min_qwenpaw_version": "1.1.0",
+  "meta": {
+    "has_sidebar": true,
+    "sidebar_components": ["PluginManagerPage"]
+  }
+}
