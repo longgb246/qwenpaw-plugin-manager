@@ -8,8 +8,8 @@
   "repository": "https://github.com/longgb246/qwenpaw-plugin-manager",
   "homepage": "https://github.com/longgb246/qwenpaw-plugin-manager",
   "entry": {
-    "backend": "plugin.py",
-    "frontend": "frontend.js"
+    "backend": "src/plugin.py",
+    "frontend": "src/frontend.js"
   },
   "dependencies": [],
   "min_version": "1.1.0",

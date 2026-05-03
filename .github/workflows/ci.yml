@@ -34,7 +34,7 @@ jobs:
           "
 
       - name: Validate plugin.py syntax
-        run: python3 -c "import py_compile; py_compile.compile('plugin.py', doraise=True); print('plugin.py OK')"
+        run: python3 -c "import py_compile; py_compile.compile('src/plugin.py', doraise=True); print('src/plugin.py OK')"
 
       - name: Validate install.sh syntax
         run: bash -n install.sh && echo "install.sh OK"
@@ -43,4 +43,4 @@ jobs:
         run: bash -n uninstall.sh && echo "uninstall.sh OK"
 
       - name: Check frontend.js exists
-        run: test -f frontend.js && echo "frontend.js OK"
+        run: test -f src/frontend.js && echo "src/frontend.js OK"

@@ -47,7 +47,7 @@ echo "  安装到:   $PLUGIN_DIR"
 echo ""
 
 # ── 检查源文件 ────────────────────────────────────────────────
-for f in plugin.json plugin.py frontend.js __init__.py; do
+for f in plugin.json src/plugin.py src/frontend.js src/__init__.py; do
     if [ ! -f "$SCRIPT_DIR/$f" ]; then
         echo "❌ 缺少文件: $SCRIPT_DIR/$f"
         exit 1
@@ -80,9 +80,9 @@ fi
 echo "📁 复制插件文件..."
 mkdir -p "$PLUGIN_DIR"
 cp "$SCRIPT_DIR/plugin.json" "$PLUGIN_DIR/"
-cp "$SCRIPT_DIR/plugin.py" "$PLUGIN_DIR/"
-cp "$SCRIPT_DIR/frontend.js" "$PLUGIN_DIR/"
-cp "$SCRIPT_DIR/__init__.py" "$PLUGIN_DIR/"
+cp "$SCRIPT_DIR/src/plugin.py" "$PLUGIN_DIR/"
+cp "$SCRIPT_DIR/src/frontend.js" "$PLUGIN_DIR/"
+cp "$SCRIPT_DIR/src/__init__.py" "$PLUGIN_DIR/"
 
 # ── 更新 config.json 注册插件 ─────────────────────────────────
 if [ -f "$CONFIG_JSON" ]; then

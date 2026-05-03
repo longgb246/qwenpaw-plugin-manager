@@ -3,11 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml)
 [![GitHub Stars](https://img.shields.io/github/stars/longgb246/qwenpaw-plugin-manager?style=social)](https://github.com/longgb246/qwenpaw-plugin-manager)
-[![QwenPaw](https://img.shields.io/badge/QwenPaw-%3E%3D1.1.0-green)](https://github.com/QwenLM/QwenPaw)
+[![QwenPaw](https://img.shields.io/badge/QwenPaw-%3E%3D1.1.0-green)](https://github.com/agentscope-ai/QwenPaw)
 
-[QwenPaw](https://github.com/QwenLM/QwenPaw)（原 CoPaw）的可视化插件管理界面。
+[QwenPaw](https://github.com/agentscope-ai/QwenPaw)（原 CoPaw）的可视化插件管理界面。
 
-> **⚠️ 声明**：本项目为**非官方**的社区维护插件，与 QwenPaw / QwenLM 官方团队**无关**，未获得官方认可或支持。请自行评估后使用。
+> **⚠️ 声明**：本项目为**非官方**的社区维护插件，与 QwenPaw / agentscope-ai 官方团队**无关**，未获得官方认可或支持。请自行评估后使用。
 
 在 QwenPaw Console 侧边栏中直接安装、卸载、启用、禁用插件。
 
@@ -27,7 +27,7 @@
 
 ## 环境要求
 
-- [QwenPaw](https://github.com/QwenLM/QwenPaw) >= 1.1.0（需支持动态插件系统）
+- [QwenPaw](https://github.com/agentscope-ai/QwenPaw) >= 1.1.0（需支持动态插件系统）
 - Python 3.10+
 
 ## 安装
@@ -55,7 +55,7 @@ CONFIG_DIR="$HOME/.copaw"
 
 # 复制插件文件
 mkdir -p "$CONFIG_DIR/plugins/plugin-manager"
-cp plugin.json plugin.py frontend.js __init__.py "$CONFIG_DIR/plugins/plugin-manager/"
+cp plugin.json src/plugin.py src/frontend.js src/__init__.py "$CONFIG_DIR/plugins/plugin-manager/"
 
 # 重启 QwenPaw
 qwenpaw shutdown && qwenpaw app
@@ -116,29 +116,27 @@ make dev
 
 ```
 qwenpaw-plugin-manager/
-├── plugin.json          # 插件清单（必需）
-├── plugin.py            # 后端：HTTP API 服务（端口 39149）
-├── frontend.js          # 前端：React 侧边栏组件
-├── __init__.py          # Python 包初始化
-├── install.sh           # 一键安装脚本
-├── uninstall.sh         # 一键卸载脚本
-├── Makefile             # 开发快捷命令
-├── LICENSE              # MIT 许可证
-├── CHANGELOG.md         # 版本变更日志
-├── CONTRIBUTING.md      # 贡献指南
-├── .editorconfig        # 编辑器配置
-├── README.md            # 英文文档
-├── README_zh.md         # 中文文档（本文件）
-├── docs/
-│   ├── SCREENSHOTS.md   # 截图说明
-│   └── plugin-manager-01.jpg  # 界面截图
-└── .github/
-    ├── workflows/
-    │   └── ci.yml       # CI 自动化流水线
-    ├── ISSUE_TEMPLATE/
-    │   ├── bug_report.md       # Bug 报告模板
-    │   └── feature_request.md  # 功能建议模板
-    └── pull_request_template.md  # PR 模板
+├── src/                         # 插件核心源码
+│   ├── plugin.py                # 后端：HTTP API 服务（端口 39149）
+│   ├── frontend.js              # 前端：React 侧边栏组件
+│   └── __init__.py              # Python 包初始化
+├── docs/                        # 文档资源
+│   ├── SCREENSHOTS.md           # 截图说明
+│   └── plugin-manager-01.jpg    # 界面截图
+├── .github/                     # GitHub 集成
+│   ├── workflows/ci.yml         # CI 自动化流水线
+│   ├── ISSUE_TEMPLATE/          # Issue 模板
+│   └── pull_request_template.md # PR 模板
+├── plugin.json                  # 插件清单（必需）
+├── install.sh                   # 一键安装脚本
+├── uninstall.sh                 # 一键卸载脚本
+├── Makefile                     # 开发快捷命令
+├── LICENSE                      # MIT 许可证
+├── CHANGELOG.md                 # 版本变更日志
+├── CONTRIBUTING.md              # 贡献指南
+├── .editorconfig                # 编辑器配置
+├── README.md                    # 英文文档
+└── README_zh.md                 # 中文文档（本文件）
 ```
 
 ### 配置目录检测逻辑

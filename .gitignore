@@ -39,3 +39,4 @@ htmlcov/
 .tox/
 git-push.sh
 git-ssh-wrapper.py
+src/__pycache__/

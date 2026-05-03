@@ -41,10 +41,10 @@ validate: ## 验证插件结构
 		assert d.get('version'), 'missing version'; \
 		assert d.get('entry',{}).get('backend'), 'missing entry.backend'; \
 		print('  ✓ plugin.json 结构正确')"
-	@python3 -c "import py_compile; py_compile.compile('plugin.py', doraise=True); \
-		print('  ✓ plugin.py 语法正确')"
-	@test -f frontend.js && echo "  ✓ frontend.js 存在" || echo "  ⚠️  frontend.js 不存在"
-	@test -f __init__.py && echo "  ✓ __init__.py 存在" || echo "  ⚠️  __init__.py 不存在"
+	@python3 -c "import py_compile; py_compile.compile('src/plugin.py', doraise=True); \
+		print('  ✓ src/plugin.py 语法正确')"
+	@test -f src/frontend.js && echo "  ✓ src/frontend.js 存在" || echo "  ⚠️  src/frontend.js 不存在"
+	@test -f src/__init__.py && echo "  ✓ src/__init__.py 存在" || echo "  ⚠️  src/__init__.py 不存在"
 	@echo ""
 	@echo "✅ 验证通过"
 

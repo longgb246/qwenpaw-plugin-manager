@@ -3,11 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml)
 [![GitHub Stars](https://img.shields.io/github/stars/longgb246/qwenpaw-plugin-manager?style=social)](https://github.com/longgb246/qwenpaw-plugin-manager)
-[![QwenPaw](https://img.shields.io/badge/QwenPaw-%3E%3D1.1.0-green)](https://github.com/QwenLM/QwenPaw)
+[![QwenPaw](https://img.shields.io/badge/QwenPaw-%3E%3D1.1.0-green)](https://github.com/agentscope-ai/QwenPaw)
 
-A visual plugin management UI for [QwenPaw](https://github.com/QwenLM/QwenPaw) (formerly CoPaw).
+A visual plugin management UI for [QwenPaw](https://github.com/agentscope-ai/QwenPaw) (formerly CoPaw).
 
-> **⚠️ Disclaimer**: This is an **unofficial**, community-maintained plugin. It is **not** affiliated with, endorsed by, or officially supported by the QwenPaw / QwenLM team. Use at your own discretion.
+> **⚠️ Disclaimer**: This is an **unofficial**, community-maintained plugin. It is **not** affiliated with, endorsed by, or officially supported by the QwenPaw / agentscope-ai team. Use at your own discretion.
 
 Install, uninstall, enable, and disable plugins directly from the QwenPaw Console sidebar.
 
@@ -27,7 +27,7 @@ Install, uninstall, enable, and disable plugins directly from the QwenPaw Consol
 
 ## Requirements
 
-- [QwenPaw](https://github.com/QwenLM/QwenPaw) >= 1.1.0 (with dynamic plugin support)
+- [QwenPaw](https://github.com/agentscope-ai/QwenPaw) >= 1.1.0 (with dynamic plugin support)
 - Python 3.10+
 
 ## Installation
@@ -55,7 +55,7 @@ CONFIG_DIR="$HOME/.copaw"
 
 # Copy plugin files
 mkdir -p "$CONFIG_DIR/plugins/plugin-manager"
-cp plugin.json plugin.py frontend.js __init__.py "$CONFIG_DIR/plugins/plugin-manager/"
+cp plugin.json src/plugin.py src/frontend.js src/__init__.py "$CONFIG_DIR/plugins/plugin-manager/"
 
 # Restart QwenPaw
 qwenpaw shutdown && qwenpaw app
@@ -109,29 +109,27 @@ This creates a symbolic link from the plugin directory to this repo, so changes 
 
 ```
 qwenpaw-plugin-manager/
-├── plugin.json          # Plugin manifest
-├── plugin.py            # Backend: HTTP API server (port 39149)
-├── frontend.js          # Frontend: React sidebar component
-├── __init__.py          # Python package init
-├── install.sh           # One-click install script
-├── uninstall.sh         # One-click uninstall script
-├── Makefile             # Dev shortcuts
-├── LICENSE              # MIT License
-├── CHANGELOG.md         # Version history
-├── CONTRIBUTING.md      # Contributing guide
-├── .editorconfig        # Editor settings
-├── README.md            # English documentation
-├── README_zh.md         # Chinese documentation
-├── docs/
-│   ├── SCREENSHOTS.md   # Screenshot guide
+├── src/                     # Plugin core source files
+│   ├── plugin.py            # Backend: HTTP API server (port 39149)
+│   ├── frontend.js          # Frontend: React sidebar component
+│   └── __init__.py          # Python package init
+├── docs/                    # Documentation assets
+│   ├── SCREENSHOTS.md       # Screenshot guide
 │   └── plugin-manager-01.jpg  # UI screenshot
-└── .github/
-    ├── workflows/
-    │   └── ci.yml       # CI pipeline
-    ├── ISSUE_TEMPLATE/
-    │   ├── bug_report.md
-    │   └── feature_request.md
-    └── pull_request_template.md
+├── .github/                 # GitHub integration
+│   ├── workflows/ci.yml     # CI pipeline
+│   ├── ISSUE_TEMPLATE/      # Issue templates
+│   └── pull_request_template.md
+├── plugin.json              # Plugin manifest
+├── install.sh               # One-click install script
+├── uninstall.sh             # One-click uninstall script
+├── Makefile                 # Dev shortcuts
+├── LICENSE                  # MIT License
+├── CHANGELOG.md             # Version history
+├── CONTRIBUTING.md          # Contributing guide
+├── .editorconfig            # Editor settings
+├── README.md                # English documentation
+└── README_zh.md             # Chinese documentation
 ```
 
 ### Config Directory Detection
