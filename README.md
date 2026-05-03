@@ -1,5 +1,10 @@
 # QwenPaw Plugin Manager
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/longgb246/qwenpaw-plugin-manager?style=social)](https://github.com/longgb246/qwenpaw-plugin-manager)
+[![QwenPaw](https://img.shields.io/badge/QwenPaw-%3E%3D1.1.0-green)](https://github.com/QwenLM/QwenPaw)
+
 A visual plugin management UI for [QwenPaw](https://github.com/QwenLM/QwenPaw) (formerly CoPaw).
 
 Install, uninstall, enable, and disable plugins directly from the QwenPaw Console sidebar.
@@ -13,6 +18,10 @@ Install, uninstall, enable, and disable plugins directly from the QwenPaw Consol
 - **Plugin Details** — View metadata, files, entry points, and status
 - **Auto Config Detection** — Supports both `.copaw` (legacy) and `.qwenpaw` (new) directories
 - **Config Backup** — Backs up `config.json` before any modification
+
+## Screenshots
+
+![Plugin Manager UI](docs/plugin-manager-01.jpg)
 
 ## Requirements
 
@@ -98,17 +107,29 @@ This creates a symbolic link from the plugin directory to this repo, so changes 
 
 ```
 qwenpaw-plugin-manager/
-├── plugin.json      # Plugin manifest
-├── plugin.py        # Backend: HTTP API server (port 39149)
-├── frontend.js      # Frontend: React sidebar component
-├── __init__.py      # Python package init
-├── install.sh       # One-click install script
-├── uninstall.sh     # One-click uninstall script
-├── Makefile         # Dev shortcuts
-├── LICENSE          # MIT License
-├── CHANGELOG.md     # Version history
-├── README.md        # This file (English)
-└── README_zh.md     # Chinese documentation
+├── plugin.json          # Plugin manifest
+├── plugin.py            # Backend: HTTP API server (port 39149)
+├── frontend.js          # Frontend: React sidebar component
+├── __init__.py          # Python package init
+├── install.sh           # One-click install script
+├── uninstall.sh         # One-click uninstall script
+├── Makefile             # Dev shortcuts
+├── LICENSE              # MIT License
+├── CHANGELOG.md         # Version history
+├── CONTRIBUTING.md      # Contributing guide
+├── .editorconfig        # Editor settings
+├── README.md            # English documentation
+├── README_zh.md         # Chinese documentation
+├── docs/
+│   ├── SCREENSHOTS.md   # Screenshot guide
+│   └── plugin-manager-01.jpg  # UI screenshot
+└── .github/
+    ├── workflows/
+    │   └── ci.yml       # CI pipeline
+    ├── ISSUE_TEMPLATE/
+    │   ├── bug_report.md
+    │   └── feature_request.md
+    └── pull_request_template.md
 ```
 
 ### Config Directory Detection

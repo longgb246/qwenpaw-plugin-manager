@@ -1,5 +1,10 @@
 # QwenPaw 插件管理器
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml/badge.svg)](https://github.com/longgb246/qwenpaw-plugin-manager/actions/workflows/ci.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/longgb246/qwenpaw-plugin-manager?style=social)](https://github.com/longgb246/qwenpaw-plugin-manager)
+[![QwenPaw](https://img.shields.io/badge/QwenPaw-%3E%3D1.1.0-green)](https://github.com/QwenLM/QwenPaw)
+
 [QwenPaw](https://github.com/QwenLM/QwenPaw)（原 CoPaw）的可视化插件管理界面。
 
 在 QwenPaw Console 侧边栏中直接安装、卸载、启用、禁用插件。
@@ -13,6 +18,10 @@
 - **插件详情** — 查看元数据、文件列表、入口点、启用状态
 - **自动检测配置目录** — 同时兼容 `.copaw`（旧版）和 `.qwenpaw`（新版）
 - **配置备份** — 修改 `config.json` 前自动备份
+
+## 截图
+
+![插件管理器界面](docs/plugin-manager-01.jpg)
 
 ## 环境要求
 
@@ -105,17 +114,29 @@ make dev
 
 ```
 qwenpaw-plugin-manager/
-├── plugin.json      # 插件清单（必需）
-├── plugin.py        # 后端：HTTP API 服务（端口 39149）
-├── frontend.js      # 前端：React 侧边栏组件
-├── __init__.py      # Python 包初始化
-├── install.sh       # 一键安装脚本
-├── uninstall.sh     # 一键卸载脚本
-├── Makefile         # 开发快捷命令
-├── LICENSE          # MIT 许可证
-├── CHANGELOG.md     # 版本变更日志
-├── README.md        # 英文文档
-└── README_zh.md     # 中文文档（本文件）
+├── plugin.json          # 插件清单（必需）
+├── plugin.py            # 后端：HTTP API 服务（端口 39149）
+├── frontend.js          # 前端：React 侧边栏组件
+├── __init__.py          # Python 包初始化
+├── install.sh           # 一键安装脚本
+├── uninstall.sh         # 一键卸载脚本
+├── Makefile             # 开发快捷命令
+├── LICENSE              # MIT 许可证
+├── CHANGELOG.md         # 版本变更日志
+├── CONTRIBUTING.md      # 贡献指南
+├── .editorconfig        # 编辑器配置
+├── README.md            # 英文文档
+├── README_zh.md         # 中文文档（本文件）
+├── docs/
+│   ├── SCREENSHOTS.md   # 截图说明
+│   └── plugin-manager-01.jpg  # 界面截图
+└── .github/
+    ├── workflows/
+    │   └── ci.yml       # CI 自动化流水线
+    ├── ISSUE_TEMPLATE/
+    │   ├── bug_report.md       # Bug 报告模板
+    │   └── feature_request.md  # 功能建议模板
+    └── pull_request_template.md  # PR 模板
 ```
 
 ### 配置目录检测逻辑
