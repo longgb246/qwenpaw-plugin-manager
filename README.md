@@ -7,6 +7,8 @@
 
 A visual plugin management UI for [QwenPaw](https://github.com/QwenLM/QwenPaw) (formerly CoPaw).
 
+> **⚠️ Disclaimer**: This is an **unofficial**, community-maintained plugin. It is **not** affiliated with, endorsed by, or officially supported by the QwenPaw / QwenLM team. Use at your own discretion.
+
 Install, uninstall, enable, and disable plugins directly from the QwenPaw Console sidebar.
 
 ## Features

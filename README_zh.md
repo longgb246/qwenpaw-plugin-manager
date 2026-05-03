@@ -7,6 +7,8 @@
 
 [QwenPaw](https://github.com/QwenLM/QwenPaw)（原 CoPaw）的可视化插件管理界面。
 
+> **⚠️ 声明**：本项目为**非官方**的社区维护插件，与 QwenPaw / QwenLM 官方团队**无关**，未获得官方认可或支持。请自行评估后使用。
+
 在 QwenPaw Console 侧边栏中直接安装、卸载、启用、禁用插件。
 
 ## 功能特性
