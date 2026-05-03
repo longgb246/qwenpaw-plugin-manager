@@ -37,3 +37,5 @@ Thumbs.db
 htmlcov/
 .pytest_cache/
 .tox/
+git-push.sh
+git-ssh-wrapper.py
